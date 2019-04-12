@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- external css -->
+    <link rel="stylesheet" href="Exercise 2.css">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet">
+    <!-- meta tag -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>HTML Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+        <div id="bgdisplay">
+            <div id="display" class="container">0</div>
+            <div id="display1" class="notext"></div>
+            <div id="display2" class="notext"></div>
+        </div>
+            
+            <div id=aButton class="container">
+
+                <div class="calculator-keys">
+                <!-- first row button -->
+                    <button type="button" class="operatorsmallb" value="all-clear" 
+                        onclick="
+                        display.textContent=0;
+                            display1.textContent='';
+                            display2.textContent='';
+                            n = false;">AC
+                    </button>
+
+                    <button type="button" class="operatorbig" value="plusmn"
+                        onclick="
+                        if (parseInt(display.textContent)!=0){
+                            display.textContent = (display.textContent * -1);
+                            return;
+                        }">&plusmn;
+                    </button>
+
+                    <button type="button" class="operatorsmall" value="%"
+                        onclick="
+                        if (parseInt(display.textContent)!=0){
+                            display.textContent = (display.textContent / 100);
+                            return;
+                        }">&percnt;
+                    </button>
+                
+                    <button type="button" class="operator" id="divide" value="/"
+                        onclick="if (((display2.textContent).length > 0) && 
+                                ((display1.textContent).length > 0)){eq.click();
+                                }
+                                display2.textContent = this.id;
+                                n = false;">&divide;
+                    </button>
+                
+                <!-- second row button -->
+                    <button type="button" value='7'
+                            onclick="if (((display.textContent).length > 1) && (n == true)){
+                                display.textContent = display.textContent + this.value;return;
+                                }
+                                if ((parseInt(display.textContent)!=0) && (n == true)){
+                            display.textContent = display.textContent + this.value;return;
+                                }
+                                if (display2.textContent != ''){
+                                    display1.textContent = display.textContent;
+                                    }
+                                display.textContent = this.value;n = true;">7
+                    </button>
+
+                    <button type="button" value="8"
+                            onclick="if (((display.textContent).length > 1) && (n == true)){
+                                display.textContent = display.textContent + this.value;return;
+                                }
+                                if ((parseInt(display.textContent)!=0) && (n == true)){
+                            display.textContent = display.textContent + this.value;return;
+                                }
+                                if (display2.textContent != ''){
+                                    display1.textContent = display.textContent;
+                                    }
+                                display.textContent = this.value;n = true;">8
+                    </button>
+
+                    <button type="button" value="9"
+                            onclick="if (((display.textContent).length > 1) && (n == true)){
+                                display.textContent = display.textContent + this.value;return;
+                                }
+                                if ((parseInt(display.textContent)!=0) && (n == true)){
+                            display.textContent = display.textContent + this.value;return;
+                                }
+                                if (display2.textContent != ''){
+                                    display1.textContent = display.textContent;
+                                    }
+                                display.textContent = this.value;n = true;">9
+                    </button>
+
+                    <button type="button" class="operatorbig" id="times" value="x"
+                        onclick="if (((display2.textContent).length > 0) && 
+                                ((display1.textContent).length > 0)){eq.click();
+                                }
+                                display2.textContent = this.id;
+                                n = false;">&times;
+                    </button>
+
+                <!-- third row button -->
+                    <button type="button" value="4"
+                            onclick="if (((display.textContent).length > 1) && (n == true)){
+                                display.textContent = display.textContent + this.value;return;
+                                }
+                                if ((parseInt(display.textContent)!=0) && (n == true)){
+                            display.textContent = display.textContent + this.value;return;
+                                }
+                                if (display2.textContent != ''){
+                                    display1.textContent = display.textContent;
+                                    }
+                                display.textContent = this.value;n = true;">4
+                    </button>
+
+                    <button type="button" value="5"
+                            onclick="if (((display.textContent).length > 1) && (n == true)){
+                                display.textContent = display.textContent + this.value;return;
+                                }
+                                if ((parseInt(display.textContent)!=0) && (n == true)){
+                            display.textContent = display.textContent + this.value;return;
+                                }
+                                if (display2.textContent != ''){
+                                    display1.textContent = display.textContent;
+                                    }
+                                display.textContent = this.value;n = true;">5
+                    </button>
+
+                    <button type="button" value="6"
+                            onclick="if (((display.textContent).length > 1) && (n == true)){
+                                display.textContent = display.textContent + this.value;return;
+                                }
+                                if ((parseInt(display.textContent)!=0) && (n == true)){
+                            display.textContent = display.textContent + this.value;return;
+                                }
+                                if (display2.textContent != ''){
+                                    display1.textContent = display.textContent;
+                                    }
+                                display.textContent = this.value;n = true;">6
+                    </button>
+
+                    <button type="button" class="operator" id="sub" value="-"
+                        onclick="if (((display2.textContent).length > 0) && 
+                                ((display1.textContent).length > 0)){eq.click();
+                                }
+                                display2.textContent = this.id;
+                                n = false;">-
+                    </button>
+
+                <!-- forth row buton -->
+                    <button type="button" value="1"
+                            onclick="if (((display.textContent).length > 1) && (n == true)){
+                                display.textContent = display.textContent + this.value;return;
+                                }
+                                if ((parseInt(display.textContent)!=0) && (n == true)){
+                            display.textContent = display.textContent + this.value;return;
+                                }
+                                if (display2.textContent != ''){
+                                    display1.textContent = display.textContent;
+                                    }
+                                display.textContent = this.value;n = true;">1
+                    </button>
+
+                    <button type="button" value="2"
+                            onclick="if (((display.textContent).length > 1) && (n == true)){
+                                display.textContent = display.textContent + this.value;return;
+                                }
+                                if ((parseInt(display.textContent)!=0) && (n == true)){
+                            display.textContent = display.textContent + this.value;return;
+                                }
+                                if (display2.textContent != ''){
+                                    display1.textContent = display.textContent;
+                                    }
+                                display.textContent = this.value;n = true;">2
+                    </button>
+
+                    <button type="button" value="3"
+                            onclick="if (((display.textContent).length > 1) && (n == true)){
+                                display.textContent = display.textContent + this.value;return;
+                                }
+                                if ((parseInt(display.textContent)!=0) && (n == true)){
+                            display.textContent = display.textContent + this.value;return;
+                                }
+                                if (display2.textContent != ''){
+                                    display1.textContent = display.textContent;
+                                    }
+                                display.textContent = this.value;n = true;">3
+                    </button>
+
+                    <button type="button" class="operator" id="add" value="+"
+                        onclick="if (((display2.textContent).length > 0) && 
+                                ((display1.textContent).length > 0)){eq.click();
+                                }
+                                display2.textContent = this.id;
+                                n = false;">+
+                    </button>
+
+                <!-- last row button -->
+                    <button type="button" class="decimal" value="."
+                    onclick="if ((parseInt(display.textContent)!=0) && 
+                            (n == true)){display.textContent = display.textContent + 
+                            this.value; return;
+                            }
+                            display.textContent = 0 + this.value;
+                            n = true;">.
+                    </button>
+                
+                    <button type="button" value="0" class="zero"
+                            onclick="if (((display.textContent).length > 1) && (n == true)){
+                                display.textContent = display.textContent + this.value;return;
+                                }
+                                if ((parseInt(display.textContent)!=0) && (n == true)){
+                            display.textContent = display.textContent + this.value;return;
+                                }
+                                if (display2.textContent != ''){
+                                    display1.textContent = display.textContent;
+                                    }
+                                display.textContent = this.value;
+                                n = true;">0
+                    </button>
+
+                    <button type="button" id="no fuction"></button>
+                    
+                    <button type="button" class="equal-sign operator" value="="
+                        onclick="if ((display1.textContent).length == 0 && 
+                                (display2.textContent).length == 0){
+                                return 0;
+                                }
+                                var op = display2.textContent;
+                                var x = parseFloat(display.textContent);
+                                var y;
+                                if ((display1.textContent).length == 0){
+                                    y = x;
+                                } else {
+                                    y = parseFloat(display1.textContent);
+                                }
+                                switch(op){
+                                    case 'divide':
+                                        display.textContent = (y / x); 
+                                        break;
+                                    case 'times':
+                                        display.textContent = (y * x); 
+                                        break;
+                                    case 'sub':
+                                        display.textContent = (y - x); 
+                                        break;
+                                    case 'add':
+                                        display.textContent = (y + x); 
+                                        break;
+                                }
+                                display2.textContent = ''; 
+                                display1.textContent = '';            
+                                n = false;">=
+                    </button>
+
+                </div>
+
+            </div>
+    </div>
+
+    
+</body>
+</html>
